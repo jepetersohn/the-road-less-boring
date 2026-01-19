@@ -1,0 +1,14 @@
+.gallery {
+  column-width: 280px;     /* controls “card” size */
+  column-gap: 2rem;
+  padding: 2rem;
+
+  /* scrapbook paper feel */
+  background: #f6f1e8;
+}
+@media (max-width: 600px) {
+  .gallery {
+    column-width: 220px;
+    padding: 1rem;
+  }
+}

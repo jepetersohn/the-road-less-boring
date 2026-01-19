@@ -1,0 +1,75 @@
+.vignette {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+
+  /* optional paper card feel */
+  background: #fff;
+  padding: 1rem;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.12);
+}
+
+.vignette:hover {
+  transform: rotate(0deg) scale(1.03);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    0 14px 28px rgba(0, 0, 0, 0.1);
+}
+
+.vignette img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  /* subtle realism */
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.vignette img {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.vignette-caption {
+  margin-top: 0.5rem;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 0.85rem;
+  color: #5a4e42;
+}
+
+.vignette-caption {
+  font-family: "Caveat", cursive;
+  font-size: 1rem;
+}
+
+.vignette {
+  border-radius: 2px;
+  clip-path: polygon(
+    0% 1%,
+    99% 0%,
+    100% 99%,
+    1% 100%
+  );
+}
+
+.vignette::after {
+  content: "↗ explore";
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 0.7rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: #6b5e50;
+}
+
+.vignette:hover::after {
+  opacity: 0.7;
+}
+
+.vignette:nth-child(odd) {
+  transform: rotate(-0.3deg);
+}
+
+.vignette:nth-child(even) {
+  transform: rotate(0.3deg);
+}
