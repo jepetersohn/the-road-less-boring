@@ -1,0 +1,84 @@
+.AboutText {
+  text-align:center;
+}
+
+.AboutText h1 {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #222;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    line-height: 1.1;
+}
+.AboutText h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.75rem;
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 2rem;
+}
+.AboutText p {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+    padding: 0 1rem;
+    text-align: justify; /* feels more book-like */
+}
+.AboutText p:first-letter {
+    font-size: 1.5rem;
+    font-weight: bold;
+    float: left;
+    margin-right: 0.25rem;
+    line-height: 1;
+}
+.AboutText hr {
+    width: 50px;
+    border: 1px solid #ccc;
+    margin: 2rem auto;
+}
+
+.AboutText img {
+    display: block;
+    max-width: 60%;
+    margin: 2rem auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+}
+
+.origin-container {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.origin-container img {
+  display: block;
+  margin: 0 auto;
+}
+
+.origin-container .vignette-caption {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .origin-container {
+    width: 100%;
+  }
+}
+
+.vignette:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+  cursor: pointer;
+}

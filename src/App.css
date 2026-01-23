@@ -37,8 +37,12 @@
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
+body {
+    font-family: 'Lora', serif;
+    background-color: #f6f1e8;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
-
 

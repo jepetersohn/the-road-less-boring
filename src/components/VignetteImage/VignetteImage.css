@@ -1,8 +1,6 @@
 .vignette {
   break-inside: avoid;
   margin-bottom: 2rem;
-
-  /* optional paper card feel */
   background: #fff;
   padding: 1rem;
   box-shadow:
@@ -20,8 +18,6 @@
   width: 100%;
   height: auto;
   display: block;
-
-  /* subtle realism */
   border: 1px solid rgba(0,0,0,0.08);
 }
 
@@ -31,16 +27,11 @@
 
 .vignette-caption {
   margin-top: 0.5rem;
-  font-family: "Special Elite", "Courier New", monospace;
-  font-size: 0.85rem;
+  font-family: "Cedarville Cursive", cursive;
+  font-size: 1rem;
   color: #5a4e42;
 }
 
-.vignette-caption {
-  font-family: "Caveat", cursive;
-  content: "↗ explore";
-  font-size: 1rem;
-}
 
 .vignette {
   border-radius: 2px;
@@ -73,45 +64,4 @@
 
 .vignette:nth-child(even) {
   transform: rotate(0.3deg);
-}
-
-.origin-container {
-  width: 60%;
-  margin: 0 auto;
-  margin-bottom: 3rem;
-}
-
-
-.origin-container img {
-  display: block;
-  margin: 0 auto;
-}
-.origin-container .vignette-caption {
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #333;
-  margin-top: 0.5rem;
-}
-
-
-@media (max-width: 768px) {
-  .origin-container {
-    width: 100%;
-  }
-}
-
-.vignette.origin {
-  max-width: 90%;  
-  border: 3px solid #ffb74d;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  background: #fff7e6;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.vignette.origin:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
 }

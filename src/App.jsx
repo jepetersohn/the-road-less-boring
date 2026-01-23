@@ -7,6 +7,7 @@ import Gallery from './components/Gallery/Gallery'
 import Vignette from './components/Vignette/Vignette'
 import { vignettes } from "./data";
 import './App.css'
+import OriginVignette from './components/OriginVignette/OriginVignette'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +16,8 @@ function App() {
     <>
     <BrowserRouter basename="/projects/theroadlessboring">
         <Routes>
-          <Route path="/" element={ <Gallery /> }/>
+          <Route path="/" element={ <OriginVignette vignette={vignettes[0]} /> }/>
+          <Route path="/Gallery" element={ <Gallery /> }/>
           <Route path="/:vignetteId" element={ <Vignette /> }/>
         </Routes>
       </BrowserRouter>
