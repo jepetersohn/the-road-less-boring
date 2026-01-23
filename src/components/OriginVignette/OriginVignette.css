@@ -1,84 +1,126 @@
+/* ===== About Text ===== */
 .AboutText {
-  text-align:center;
+  text-align: center;
 }
 
 .AboutText h1 {
-    font-family: 'Cedarville Cursive', cursive;
-    font-size: 4rem;
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    color: #222;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    line-height: 1.1;
-}
-.AboutText h2 {
-    font-family: 'Lora', serif;
-    font-size: 1.75rem;
-    text-align: center;
-    font-weight: 400;
-    font-style: italic;
-    color: #555;
-    margin-bottom: 2rem;
-}
-.AboutText p {
-    font-family: 'Lora', serif;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #444;
-    max-width: 700px;
-    margin: 0 auto 1.5rem auto;
-    padding: 0 1rem;
-    text-align: justify; /* feels more book-like */
-}
-.AboutText p:first-letter {
-    font-size: 1.5rem;
-    font-weight: bold;
-    float: left;
-    margin-right: 0.25rem;
-    line-height: 1;
-}
-.AboutText hr {
-    width: 50px;
-    border: 1px solid #ccc;
-    margin: 2rem auto;
-}
-
-.AboutText img {
-    display: block;
-    max-width: 60%;
-    margin: 2rem auto;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    border-radius: 8px;
-}
-
-.origin-container {
-  width: 50%;
-  margin: 0 auto;
-  margin-bottom: 3rem;
-}
-
-.origin-container img {
-  display: block;
-  margin: 0 auto;
-}
-
-.origin-container .vignette-caption {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 4rem;
   text-align: center;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #333;
-  margin-top: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: #222;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  line-height: 1.1;
 }
 
-@media (max-width: 768px) {
-  .origin-container {
-    width: 100%;
-  }
+.AboutText h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.75rem;
+  text-align: center;
+  font-weight: 400;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 2rem;
 }
 
-.vignette:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+.AboutText p {
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  padding: 0 1rem;
+  text-align: justify;
+}
+
+.AboutText p:first-letter {
+  font-size: 1.5rem;
+  font-weight: bold;
+  float: left;
+  margin-right: 0.25rem;
+  line-height: 1;
+}
+
+.AboutText hr {
+  width: 50px;
+  border: 1px solid #ccc;
+  margin: 2rem auto;
+}
+
+.image-border-container {
+  position: relative;
+  background: white;
+  padding: 16px 16px 40px 16px; /* extra bottom padding for caption */
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  overflow: hidden; /* clip image inside */
+  width: 420px;
+  height: 420px;
+  margin: 40px auto 3rem;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-border-container:hover {
+  transform: translateY(-8px); /* subtle lift */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+}
+
+/* Inner wrapper to keep image inside border */
+.image-inner-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px; /* slightly smaller than container */
+}
+
+/* Zoomed image */
+.vignette-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.vignette-img.is-zoomed {
+  transform: scale(2);
+}
+
+.vignette-caption-on-border {
+  position: absolute;
+  bottom: 3px;
+  left: 16px;
+  right: 16px;
+  color: #333;
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 1.4rem;
+  font-weight: normal;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+  z-index: 2;
+  white-space: nowrap;
+}
+
+
+/* ===== Description ===== */
+.origin-description {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .image-border-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .vignette-img.is-zoomed {
+    transform: none;
+  }
 }
