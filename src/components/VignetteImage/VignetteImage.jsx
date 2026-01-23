@@ -3,15 +3,17 @@ import './VignetteImage.css'
 
 const VignetteImage = ({ vignette }) => {
   return (
-    <div className="vignette">
+    <>
+    <div className={`vignette ${vignette.type}`}>
       <a href={vignette.url}>
         <img 
           src={vignette.imageUrl} 
-          alt={vignette.description} 
+          alt={vignette.alt} 
         />
       </a>
-      <div className="vignette-caption"></div>
+      <div className="vignette-caption">{vignette.caption}</div>
     </div>
+    </>
   );
 };
 

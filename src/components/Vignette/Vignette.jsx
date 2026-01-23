@@ -13,12 +13,16 @@ export default function Vignette() {
 
   return (
     <div className="vignette-container">
-        <div class ="vignette-header">
+        <div className ="vignette-header">
             <h1>{vignette.title}</h1>
             <img className="vignette-img" src={vignette.imageUrl} alt={vignette.title} />
         </div> 
-      <p>{vignette.description}</p>
-      <p>{vignette.location}</p>
+        {vignette.description.map(( description ) => (
+            <p key={vignette.id}> {description}</p>
+
+            ))}
+      
+      <p>{vignette.town}, {vignette.state}, {vignette.country}</p>
       <p>{vignette.tags}</p>
     </div>
   );
