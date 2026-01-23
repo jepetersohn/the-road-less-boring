@@ -1,4 +1,4 @@
-/* ===== About Text ===== */
+
 .AboutText {
   text-align: center;
 }
@@ -52,10 +52,10 @@
 .image-border-container {
   position: relative;
   background: white;
-  padding: 16px 16px 40px 16px; /* extra bottom padding for caption */
+  padding: 16px 16px 40px 16px;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-  overflow: hidden; /* clip image inside */
+  overflow: hidden; 
   width: 420px;
   height: 420px;
   margin: 40px auto 3rem;
@@ -64,19 +64,17 @@
 }
 
 .image-border-container:hover {
-  transform: translateY(-8px); /* subtle lift */
+  transform: translateY(-8px); 
   box-shadow: 0 12px 24px rgba(0,0,0,0.35);
 }
 
-/* Inner wrapper to keep image inside border */
 .image-inner-wrapper {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 4px; /* slightly smaller than container */
+  border-radius: 4px; 
 }
 
-/* Zoomed image */
 .vignette-img {
   width: 100%;
   height: 100%;
@@ -106,14 +104,12 @@
 }
 
 
-/* ===== Description ===== */
 .origin-description {
   max-width: 700px;
   margin: 0 auto;
   text-align: left;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .image-border-container {
     width: 100%;

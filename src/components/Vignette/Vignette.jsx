@@ -31,14 +31,12 @@ export default function Vignette() {
         onMouseLeave={() => !isMobile && setIsHovering(false)}
         onMouseMove={!isMobile ? handleMouseMove : undefined}
       >
-        {/* Base image */}
         <img
           src={vignette.imageUrl}
           alt={vignette.title}
           className={`vignette-img ${isHovering ? "is-hidden" : ""}`}
         />
 
-        {/* Zoomed image overlay */}
         <div
           className={`zoom-replace ${isHovering ? "is-visible" : ""}`}
           style={{
