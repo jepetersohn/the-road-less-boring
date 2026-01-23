@@ -42,7 +42,7 @@ export const vignettes = [
         {
         id:  "LachoEarthOven",
         imageUrl: "/projects/theroadlessboring/images/LachoEarthOven.jpg",
-        alt: "The inside of the top of a lighthouse",
+        alt: "A deep hole in the ground with stone walls",
         url: "LachoEarthOven",
         title: "Stone Oven, Stories of Independence",
         caption: "",
