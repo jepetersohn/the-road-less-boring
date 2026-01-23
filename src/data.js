@@ -103,9 +103,9 @@ export const vignettes = [
      {
         id:  "JudyGarlandBirthplace",
         imageUrl: "/projects/theroadlessboring/images/JudyGarlandBirthplace.jpg",
-        alt: "The inside of the top of a lighthouse",
+        alt: "An indoor stairway with wallpapered walls",
         url: "JudyGarlandBirthplace",
-        title: "An indoor stairway with wallpapered walls",
+        title: "The Gumm House",
         caption: "",
         description: [],
         town: "Grand Rapids",
