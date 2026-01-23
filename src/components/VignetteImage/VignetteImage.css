@@ -38,6 +38,7 @@
 
 .vignette-caption {
   font-family: "Caveat", cursive;
+  content: "↗ explore";
   font-size: 1rem;
 }
 
@@ -52,7 +53,7 @@
 }
 
 .vignette::after {
-  content: "↗ explore";
+  
   position: absolute;
   bottom: 8px;
   right: 10px;

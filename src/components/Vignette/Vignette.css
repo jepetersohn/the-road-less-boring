@@ -1,0 +1,13 @@
+h1 {
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.vignette-header {
+    display:grid;
+    place-items:center;
+}
+
+.vignette-img {
+    max-width: 600px;
+}

@@ -4,10 +4,13 @@ import './VignetteImage.css'
 const VignetteImage = ({ vignette }) => {
   return (
     <div className="vignette">
-      <img 
-        src={vignette.imageUrl} 
-        alt={vignette.description} 
-      />
+      <a href={vignette.url}>
+        <img 
+          src={vignette.imageUrl} 
+          alt={vignette.description} 
+        />
+      </a>
+      <div className="vignette-caption"></div>
     </div>
   );
 };
