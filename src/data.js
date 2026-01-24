@@ -13,6 +13,8 @@ export const vignettes = [
         town: "Beaver Dam",
         state: "Wisconsin",
         country: "United States of America",
+        lat: "43.458",
+        lng:"-88.827",
         tags: "",
         type: "origin",
         revealed: false
@@ -35,6 +37,8 @@ export const vignettes = [
         town: "Dover",
         state: "New Hampshire",
         country: "United States of America",
+        lat: "43.201",
+        lng:"-70.874",
         type: "historical",
         tags: "",
         revealed: false
@@ -50,6 +54,8 @@ export const vignettes = [
         town: "Labadee",
         state: "",
         country: "Haiti",
+        lat: "19.774",
+        lng:"-72.243",
         tags: "",
         type: "historical",
         revealed: false
@@ -65,7 +71,9 @@ export const vignettes = [
         town: "Memphis",
         state: "Tennessee",
         country: "United States of America",
-        tags: "music",
+        lat: "35.046",
+        lng:"-90.023",
+        tags: "",
         type: "historical",
         revealed: false
     },
@@ -80,6 +88,8 @@ export const vignettes = [
         town: "Boulder City",
         state: "Nevada",
         country: "United States of America",
+        lat: "36.016",
+        lng:"-114.738",
         tags: "",
         type: "historical",
         revealed: false
@@ -96,6 +106,8 @@ export const vignettes = [
         town: "Two Harbors",
         state: "Minnesota",
         country: "United States of America",
+        lat: "47.014",
+        lng:"-91.664",
         tags: "",
         type: "historical",
         revealed: false
@@ -103,7 +115,7 @@ export const vignettes = [
      {
         id:  "JudyGarlandBirthplace",
         imageUrl: "/projects/theroadlessboring/images/JudyGarlandBirthplace.jpg",
-        alt: "An indoor stairway with wallpapered walls",
+        alt: "",
         url: "JudyGarlandBirthplace",
         title: "The Gumm House",
         caption: "",
@@ -111,6 +123,8 @@ export const vignettes = [
         town: "Grand Rapids",
         state: "Minnesota",
         country: "United States of America",
+        lat: "47.206",
+        lng:"-93.530",
         tags: "",
         type: "historical",
         revealed: false
@@ -123,9 +137,11 @@ export const vignettes = [
         title: "Bedrock City",
         caption: "",
         description: [],
-        town: "Williams",
+        town: "Valle",
         state: "Arizona",
         country: "United States of America",
+        lat: "35.655",
+        lng:"-112.141",
         tags: "",
         type: "historical",
         revealed: false
@@ -143,6 +159,8 @@ export const vignettes = [
         state: "Tennessee",
         country: "United States of America",
         tags: "",
+        lat: "35.046",
+        lng:"-90.023",
         type: "historical",
         revealed: false
     },
@@ -157,6 +175,8 @@ export const vignettes = [
         town: "Rapid City",
         state: "South Dakota",
         country: "United States of America",
+        lat: "44.081",
+        lng:"-103.229",
         type: "quirky",
         tags: "",
         revealed: false
@@ -172,6 +192,8 @@ export const vignettes = [
         town: "Celoron",
         state: "New York",
         country: "United States of America",
+        lat: "42.103",
+        lng:"-79.287",
         type: "historical",
         tags: "",
         revealed: false
@@ -187,6 +209,8 @@ export const vignettes = [
         town: "Tombstone",
         state: "Arizona",
         country: "United States of America",
+        lat: "31.712",
+        lng:"-110.065",
         type: "historical",
         tags: "",
         revealed: false
@@ -202,6 +226,8 @@ export const vignettes = [
         town: "Flagstaff",
         state: "Arizona",
         country: "United States of America",
+        lat: "35.566",
+        lng:"-111.471",
         type: "historical",
         tags: "",
         revealed: false

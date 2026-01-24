@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { vignettes } from "../../data";
+/*import VignetteMap from "../Map/VignetteMap";*/
 import "./Vignette.css";
 
 export default function Vignette() {
