@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { vignettes } from "../../data";
-/*import VignetteMap from "../Map/VignetteMap";*/
+import VignetteMap from "../Map/VignetteMap";
 import "./Vignette.css";
 
 export default function Vignette() {
@@ -46,14 +46,16 @@ export default function Vignette() {
           }}
         />
       </div>
-
+      
       <div className="vignette-text">
         {vignette.description.map((text, i) => (
           <p key={i}>{text}</p>
         ))}
-
+<VignetteMap vignette={ vignette } />
         <p className="vignette-meta">
-          {vignette.town}, {vignette.state}, {vignette.country}
+          <i>{[vignette.town, vignette.state, vignette.country]
+    .filter(Boolean)
+    .join(", ")}</i>
         </p>
 
         <p className="vignette-tags">{vignette.tags}</p>

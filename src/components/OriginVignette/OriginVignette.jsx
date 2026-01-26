@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./OriginVignette.css";
 import { useNavigate } from "react-router-dom";
+import VignetteMap from "../Map/VignetteMap";
 
 export default function OriginVignette({ vignette }) {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export default function OriginVignette({ vignette }) {
         This is a work in progress: keep checking back. Still to be added:
         <ul>
           <li>Interactive graffiti wall.</li>
-          <li>Full vignettes with descriptions and React-Leaflet.</li>
+          <li>Full vignettes with descriptions <s>and React-Leaflet</s>.</li>
           <li>Comment submission in each image's vignette</li>
         </ul>
       </div>
@@ -60,6 +61,7 @@ export default function OriginVignette({ vignette }) {
           <p key={`${vignette.id}-${idx}`}>{desc}</p>
         ))}
       </div>
+      <VignetteMap vignette={ vignette } />
     </>
   );
 }

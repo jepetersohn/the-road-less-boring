@@ -9,7 +9,11 @@ h1 {
 }
 
 .vignette-img {
-    max-width: 600px;
+  width: 100%; 
+  max-width: 700px;
+  height: auto; 
+  object-fit: cover;     
+  transition: opacity 0.2s ease;
 }
 
 .vignette-container h1 {
@@ -46,8 +50,9 @@ h1 {
 
 .zoom-replace-wrapper {
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: 100%;  
+  max-width: 700px;
+  aspect-ratio: 1 / 1;
   margin-bottom: 32px;
 }
 
