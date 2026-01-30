@@ -17,7 +17,8 @@ export const vignettes = [
         lng:"-88.827",
         tags: "",
         type: "origin",
-        revealed: false
+        revealed: false,
+        supplementalImages: ["/projects/theroadlessboring/images/WaylandTheater2.jpg"]
     },
      {
         id:  "DoverHouse",
@@ -41,7 +42,8 @@ export const vignettes = [
         lng:"-70.874",
         type: "historical",
         tags: "",
-        revealed: false
+        revealed: false,
+        supplementalImages: [""]
     },
         {
         id:  "LachoEarthOven",
@@ -50,7 +52,9 @@ export const vignettes = [
         url: "LachoEarthOven",
         title: "Stone Oven, Stories of Independence",
         caption: "",
-        description: [],
+        description: ["I leaned over the edge of this deep, brick-lined pit and photographed something that looks deceptively simple. It looks like nothing more than a hole in the ground, but it carries centuries of effort and meaning to the people of the area. This was an earth oven, a giant furnace commissioned by Henri Christophe, one of the leaders of Haiti's revolution and later king of northern Haiti. Ovens like this one were used to fire materials, bricks, lime, and other essentials, for building the monumental structures that would come to define early independent Haiti, especially the great mountaintop fortress called Citadelle Laferrière.",
+                    "After Haiti won independence from France in 1804, Christophe set out to fortify the young nation against possible attempts at reconquest. One of his boldest projects was the Citadelle, begun in 1805 and completed around 1820, a massive stone fortress perched nearly 3,000 feet above the surrounding plains and stocked to withstand sieges.",
+                    "This oven, sunk into the earth and lined with clay bricks, was part of that larger story. It was a worksite where the rhythm of human hands shaped fuel, stone, and clay into the the raw materials behind Haiti's earliest defenses. When I looked down, I thought about the hands that dug deep, laid each brick, tended the fire, and about the countless unnamed workers whose sweat and skill made structures like the Citadelle possible. Tens of thousands labored on that fortress project, moving stone and mortar up steep mountain paths in a time before machines, driven by a collective purpose born of newly-found freedom and the fear of losing it."],
         town: "Labadee",
         state: "",
         country: "Haiti",
@@ -58,7 +62,8 @@ export const vignettes = [
         lng:"-72.243",
         tags: "",
         type: "historical",
-        revealed: false
+        revealed: false,
+        supplementalImages: [""]
     },
     {
         id:  "ElvisPlayground",
@@ -67,7 +72,10 @@ export const vignettes = [
         url: "ElvisPlayground",
         title: "Lisa Marie's playset",
         caption: "",
-        description: [],
+        description: ["Just outside of Vernon Presley's office in Graceland stands a simple metal playset that once belonged to Elvis Presley's daughter, Lisa Marie. She has spoken about how, as a child, she had the run of the estate, riding golf carts across the lawns, playing outdoors with friends, and enjoying the freedom of life on the fourteen acre property.",
+            "Nothing about the playset suggests glamour. Instead, it speaks to the lived reality of a child growing up in one of the most famous homes in America. The wear on the equipment tell a story of daily life at Graceland, where childhood play unfolded alongside the idiosyncroses of Elvis's world.",
+           "One particular scar is a tangible reminder of one of Elvis's favorite pastimes. He and his friends often practiced shooting on the grounds, using an old smokehouse as a makeshift firing range. Stray bullets sometimes traveled beyond the enclosed area and struck nearby structures, including the playset. Graceland archivist Angie Marchese has explained that the marks on the playground and surrounding brickwork reflect Elvis's imperfect aim, noting \"And there's...[a bullet hole] in the bottom of Lisa's slide, so not even Elvis was a perfect shot!\""
+        ],
         town: "Memphis",
         state: "Tennessee",
         country: "United States of America",
@@ -75,7 +83,8 @@ export const vignettes = [
         lng:"-90.023",
         tags: "",
         type: "historical",
-        revealed: false
+        revealed: false,
+        supplementalImages: [""]
     },
        {
         id:  "HooverDam",
@@ -94,7 +103,8 @@ export const vignettes = [
         lng:"-114.738",
         tags: "",
         type: "historical",
-        revealed: false
+        revealed: false,
+        supplementalImages: [""]
     },
   
      {
@@ -104,7 +114,9 @@ export const vignettes = [
         url: "LighthouseDanger",
         title: "Minnesota's oldest operating lighthouse",
         caption: "",
-        description: [],
+        description: ["We had the entire lighthouse to ourselves for the night, a still, empty house with no TV and no Wi-Fi. My family of four spent the evening exploring the rooms and playing a card game we'll call \"bologna\" (but is often known by its much less family-friendly name). We sat at the dining room table for hours, laughing to keep the creaks and groans of the old house from feeling too eerie. It wasn't until we found a guestbook on a shelf labeled \"GHOST TALES\" that we learned about the lighthouse's alleged paranormal activity. It includes anecdotes shared by past guests about their haunting experiences in the house. One pair camped out at the very top of the lighthouse in sleeping bags, listening to the wind and the distant call of Lake Superior, in hopes of meeting a spectral lighthouse keeper. We weren't as brave. We kept the lights on all night, partly amused, partly creeped out.",
+                    "First lit on April 14, 1892, the Two Harbors Lighthouse is the oldest operating lighthouse in Minnesota. It has been guiding ships into Agate Bay for more than 130 years. Its first keeper, Charles Lederle, served nearly twenty years, followed by Otto Redman, Lee Benton, Alexander McLean, and Lawrence Pederson, keeping the lamp burning through storms, long nights, and the heyday of Great Lakes shipping.",
+                    "Even without any ghosts, the house feels alive with story. Sitting together around the dining room table, hearing my kids' laughter and the shuffle of cards, it was easy to feel connected to the generations who lived here and to savor the rare, quiet magic of a lighthouse all to ourselves."],
         town: "Two Harbors",
         state: "Minnesota",
         country: "United States of America",
@@ -112,7 +124,8 @@ export const vignettes = [
         lng:"-91.664",
         tags: "",
         type: "historical",
-        revealed: false
+        revealed: false,
+        supplementalImages: ["/projects/theroadlessboring/images/Lighthouse.jpg", "/projects/theroadlessboring/images/Lighthouse2.jpg", "/projects/theroadlessboring/images/Lighthouse3.jpg", "/projects/theroadlessboring/images/Lighthouse4.jpg", "/projects/theroadlessboring/images/LighthouseGhostTales.jpg"]
     },
      {
         id:  "JudyGarlandBirthplace",
@@ -134,7 +147,8 @@ export const vignettes = [
         lng:"-93.530",
         tags: "",
         type: "historical",
-        revealed: false
+        revealed: false,
+        supplementalImages: [""]
     },
     {
         id:  "RaptorRanch",
@@ -143,7 +157,12 @@ export const vignettes = [
         url: "RaptorRanch",
         title: "Bedrock City",
         caption: "",
-        description: [],
+        description: ["About 25 miles from the South Rim of the Grand Canyon, sits a roadside attraction that has delighted families, cartoon fans, and Route 66 travelers for more than half a century. Bedrock City opened in 1972 as a full-scale, Flintstones-themed park where visitors could wander among brightly colored buildings, pose with life-size statues of Fred, Wilma, Barney, Betty and Dino, slide down a brontosaurus-shaped slide, and imagine themselves in a playful Stone Age town straight out of the beloved Hanna-Barbera cartoon. It was part of a larger trend of quirky roadside stops that the era's road warriors and vacationing families treasured as part of the journey as much as the destination.",
+                    "For decades, the park stood as a nostalgic stop on the way to and from the Grand Canyon, with generations of visitors recalling running between the colorful buildings and climbing oversized stone furniture. Many families stopped there multiple times over the years, and older visitors still talk about returning as adults to recreate their childhood snapshots beside the same dinosaur slide and foot-powered cars.",
+                    "By the mid-2010s, changing tourism patterns and financial strains led the original owners, the Speckels family, to put the 30-acre property up for sale. Bedrock City closed in early 2019, ending nearly 47 years of continuous operation and prompting a wave of nostalgia-fueled media coverage and social-media remembrance from fans who had grown up with the attraction.",
+                    "Soon afterward, the site was purchased by falconers Troy Morris and Ron Brown, who reimagined the space as \"Raptor Ranch\", a bird-of-prey education and wildlife experience that blends live flight demonstrations, falconry courses, and conservation programs with the preserved Flintstones elements visitors loved. Instead of dismantling the old structures, the new owners chose to preserve much of Bedrock City, allowing the Flintstones buildings and dinosaur slide to coexist with hawks, owls, and vultures.",
+                    "When I visited, the place was nearly deserted. The cartoon houses stood quietly under the Arizona sun, their bright colors faded but intact. The dinosaur slide waited without a line, and the wide paths once filled with children's laughter felt suspended in time. It was easy to imagine the crowds that once passed through and just as easy to feel the strange beauty of what remained.",
+                    "Today, Raptor Ranch and Bedrock City exist in a kind of overlap between eras. Part living wildlife center, part roadside relic, it is a place where memories linger longer than visitors, and where the echoes of family road trips past still seem to drift through the desert air."],
         town: "Valle",
         state: "Arizona",
         country: "United States of America",
@@ -151,7 +170,8 @@ export const vignettes = [
         lng:"-112.141",
         tags: "",
         type: "historical",
-        revealed: false
+        revealed: false,
+        supplementalImages: ["/projects/theroadlessboring/images/RaptorRanch2.jpg", "/projects/theroadlessboring/images/RaptorRanch3.jpg", "/projects/theroadlessboring/images/RaptorRanch4.jpg"]
     },
  
     {
@@ -159,9 +179,13 @@ export const vignettes = [
         imageUrl: "/projects/theroadlessboring/images/ElvisKitchen.jpg",
         alt: "a retro kitchen with carpet",
         url: "ElvisKitchen",
-        title: "Elvis' Kitchen",
+        title: "The King's Kitchen",
         caption: "",
-        description: [],
+        description: ["At Graceland, the kitchen isn't some generic space. Walking by it today, you don't just see appliances and countertops. It feels like a snapshot of Elvis's everyday life. The room remains frozen in time, just as he left it in the mid 1970s: dark, wooden cabinets, patterned floors, and even one of the earliest high-end microwave ovens of the era, which Elvis reportedly paid around $1,000 for when most people hadn't yet seen one in their own homes.",
+"Elvis had a big appetite, but he was particular. Fish was never cooked in the house because he couldn't stand the smell. Instead, the kitchen was stocked constantly with the foods he loved, from peanut butter and banana sandwiches, his signature late night snack, to meatloaf, mashed potatoes, brownies, and banana pudding reportedly made fresh nightly.",
+"His famously indulgent sandwich, made with peanut butter, sliced bananas, bacon, and lots of butter, was so iconic that friends and staff alike came to expect it at all hours. The cast iron skillet used for such creations still sits on the stove.",
+"The kitchen wasn't just a place to eat. It was a stage for camaraderie, late night gatherings with his Memphis Mafia entourage, and constant motion as cooks worked around the clock to satisfy every craving.",
+],
         town: "Memphis",
         state: "Tennessee",
         country: "United States of America",
@@ -169,7 +193,8 @@ export const vignettes = [
         lat: "35.046",
         lng:"-90.023",
         type: "historical",
-        revealed: false
+        revealed: false,
+        supplementalImages: [""]
     },
      {
         id:  "ArtAlley",
@@ -178,7 +203,10 @@ export const vignettes = [
         alt: "An alleyway covered in graffiti",
         title: "Art Alley",
         caption: "",
-        description: [],
+        description: ["This is not just a passage between buildings, it is an ever-changing outdoor art gallery that celebrates community expression with vibrant murals and street art. What started in the early 2000s with local artists hanging canvas pieces on the brick walls evolved organically into painting directly onto the alley surfaces. Over time, community members and city officials nurtured this creative space and it became known simply as \"Art Alley\". Today its walls are covered with bold color, cultural commentary, abstract work, and personal expressions that change frequently as artists continually add new pieces.",
+"The purpose of Art Alley is to give artists, like local Logan Beert, a place to share their voice openly. He designed a piece where people can stand among the figures in the mural and \"become a part of the story,\" helping neighbors and visitors reflect on inclusion and difference. Another local contributor is Lumi, an artist inspired by nature and the Black Hills whose vibrant, earth-themed work explores the connection between people and their environment.",
+"One regular contributor, known by the artistic handle \"Komie\", painted a mural that functions a bit like a self-portrait. Komie said that part of creating in Art Alley is understanding that your work will likely be painted over someday, but that this impermanence is part of what makes the space alive and welcoming to new voices.",
+"Walking down Art Alley today you see a tapestry of styles and stories, a place where paint, community, and expression meet in a colorful celebration of art that belongs to everyone."],
         town: "Rapid City",
         state: "South Dakota",
         country: "United States of America",
@@ -186,7 +214,8 @@ export const vignettes = [
         lng:"-103.229",
         type: "quirky",
         tags: "",
-        revealed: false
+        revealed: false,
+        supplementalImages: [""]
     },
      {
         id:  "LucyHouse",
@@ -195,7 +224,9 @@ export const vignettes = [
         alt: "An alleyway covered in graffiti",
         title: "Lucy's Childhood Home",
         caption: "",
-        description: [""],
+        description: ["This unassuming house that now sits on Lucy Lane was the childhood home of Lucille Ball, one of America's most beloved comedians and the star of \"I Love Lucy\". Lucy moved into this house with her family when she was eight years old, and lived here through her early teens. She later wrote that she \"loved every inch of that weathered shingled house,\" describing its front porch, back shed, and small parlor where she and her brother Freddy created countless homemade plays for family audiences.",
+                    "Inside the home, she staged amateur productions in the parlor, using the curtain rod between rooms as a make-shift backdrop while relatives watched from the next room. The backyard workshop, built by her grandfather Fred Hunt, was where sleds, wagons, and other toys were made, shaping Lucy's early sense of play and performance.",
+                    "The home was also a focal point of tragedy. In 1927, while her grandfather was supervising some target practice with a .22 rifle in the back yard, an accident left a neighborhood boy paralyzed. He was charged with reckless endangerment, and the house was auctioned to pay legal expenses, forcing the family to relocate to an apartment in nearby Jamestown."],
         town: "Celoron",
         state: "New York",
         country: "United States of America",
@@ -203,7 +234,8 @@ export const vignettes = [
         lng:"-79.287",
         type: "historical",
         tags: "",
-        revealed: false
+        revealed: false,
+        supplementalImages: [""]
     },
      {
         id:  "BirdcageStairs",
@@ -212,7 +244,9 @@ export const vignettes = [
         alt: "Narrow stairs leading to a small room",
         title: "The Birdcage Theater",
         caption: "",
-        description: [""],
+        description: ["The edges of each step on this narrow wooden staircase are worn down from years of boots climbing them. According to our guide, these stairs once led up to a brothel room. This building was once filled with gambling men and ladies of the night, the smell of whiskey and smoke, and the rough laughter of patrons who came through here night after night. They did not just climb these steps. They scraped and ground them down, boot heel by boot heel, until what remains now is a topography of friction and time.",
+                "The Birdcage Theater, built in 1881, was far more than a saloon or gambling hall. For two decades it hosted bawdy shows, poker games, and live performances during some of Tombstone's wildest years. It survived fires, floods, and the boom and bust of the silver mining era, earning a reputation as the longest continually operating theater and saloon in the American West. Standing here, the worn wood is not just a staircase. It is a physical record of the theater's chaotic energy and lawlessness, its patrons, and the town's colorful history.",
+                "Looking up at those treads, it is easy to imagine the music, the clatter of spurs, and the stories that unfolded here."],
         town: "Tombstone",
         state: "Arizona",
         country: "United States of America",
@@ -220,16 +254,19 @@ export const vignettes = [
         lng:"-110.065",
         type: "historical",
         tags: "",
-        revealed: false
+        revealed: false,
+        supplementalImages: [""]
     },
     {
         id:  "Wupatki",
         imageUrl: "/projects/theroadlessboring/images/Wupatki.jpg",
         url: "Wupatki",
         alt: "Small brick walls in the desert",
-        title: "Citadel Pueblo - A Home Among Many",
+        title: "Nalakihu Pueblo - A Home Among Many",
         caption: "",
-        description: [""],
+        description: ["This low, weathered base once supported walls and rooms where families lived nearly a thousand years ago.  It's just a quiet, sun-scorched spot in the desert now, but it was once home to real people with stories, routines, and connections to the world around them. What you see here is the foundational footprint of Nalakihu Pueblo, a settlement built in the late 1100s CE by peoples now referred to as Ancestral Puebloans, during a time when this broad, dry landscape supported thriving agricultural communities connected by trade and culture.",
+           "The name Nalakihu comes from a Hopi word meaning \"house standing outside the village,\" precisely because this smaller dwelling sat apart from the larger Citadel Pueblo above it. Archaeologists estimate it originally had about ten rooms on the ground floor and more above, creating space for perhaps one extended family or multiple generations under one roof.",
+            "Though what remains is only a few feet high now, you're able to imagine what it once was: a two-story home bustling with daily life, pots on hearths, woven baskets drying in sun, and children running through walkways. More than just architectural fragments, places like this connect us to real lives lived here long before written records: births and feasts, challenges and triumphs, the slow work of building shelter and sustaining community in a harsh environment. Though the roofs and upper walls have long since fallen, the stories embedded in this stone still speak, if you slow down to listen"],
         town: "Flagstaff",
         state: "Arizona",
         country: "United States of America",
@@ -237,7 +274,8 @@ export const vignettes = [
         lng:"-111.471",
         type: "historical",
         tags: "",
-        revealed: false
+        revealed: false,
+        supplementalImages: [""]
     }
 
 ]

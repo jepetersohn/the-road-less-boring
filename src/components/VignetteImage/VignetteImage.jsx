@@ -11,7 +11,7 @@ const VignetteImage = ({ vignette }) => {
           alt={vignette.alt} 
         />
       </a>
-      <div className="vignette-caption">{vignette.caption}</div>
+      <div className="vignette-caption">{vignette.title}</div>
     </div>
     </>
   );

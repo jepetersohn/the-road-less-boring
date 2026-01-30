@@ -7,8 +7,9 @@ export default function Gallery(){
     return (
     <>
        <div className="gallery-wrapper">
+        <h1>The Road Less Boring</h1>
             <div className="gallery">
-                {vignettes.slice(1).map((vignette) => (
+                {vignettes.slice(0).map((vignette) => (
                     <VignetteImage key={vignette.id} vignette={vignette} />
                 ))}
             </div>
