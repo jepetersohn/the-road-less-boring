@@ -25,9 +25,9 @@ export default function OriginVignette({ vignette }) {
    <div className="wip-text">
         This is a work in progress: keep checking back. Still to be added:
         <ul>
-          <li>Interactive graffiti wall.</li>
-          <li>Full vignettes with descriptions <s>and React-Leaflet</s>.</li>
-          <li>Comment submission in each image's vignette</li>
+          <li>Interactive graffiti wall</li>
+          <li><s>Full vignettes with descriptions and React-Leaflet</s></li>
+          <li><s>Comment submission in each image's vignette</s></li>
         </ul>
       </div>
 <div

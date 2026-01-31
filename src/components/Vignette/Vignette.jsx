@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { vignettes } from "../../data";
+import BackLink from "../BackLink/BackLink";
 import VignetteMap from "../Map/VignetteMap";
 import CommentForm from "../CommentForm/CommentForm";
+import CommentList from "../CommentList/CommentList";
 import "./Vignette.css";
 
 export default function Vignette() {
   const { vignetteId } = useParams();
   const vignette = vignettes.find(v => v.id === vignetteId);
+  const [refreshComments, setRefreshComments] = useState(false);
 
   const [isHovering, setIsHovering] = useState(false);
   const [bgPos, setBgPos] = useState({ x: 50, y: 50 });
@@ -25,6 +28,7 @@ export default function Vignette() {
 
   return (
     <div className="vignette-container">
+      <BackLink to="/gallery" text="← Back to Gallery" />
       <h1 className="vignette-title">{vignette.title}</h1>
 
       <div
@@ -65,7 +69,8 @@ export default function Vignette() {
       width: "100%" }} />
       <div id="comment-section">
          <h2>Comments</h2>   
-         <CommentForm />
+         <CommentForm vignetteID={vignette.id} setRefreshComments={setRefreshComments}  />
+         <CommentList vignetteID={vignette.id} refreshComments={refreshComments}  />
       </div>
 
     </div>

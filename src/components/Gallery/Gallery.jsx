@@ -1,12 +1,14 @@
 import React from "react"
 import { vignettes } from "../../data";
 import VignetteImage from "../VignetteImage/VignetteImage"; 
+import BackLink from "../BackLink/BackLink";
 import './Gallery.css'
 
 export default function Gallery(){
     return (
     <>
        <div className="gallery-wrapper">
+        <BackLink to="/" text="← Back Home" />
         <h1>The Road Less Boring</h1>
             <div className="gallery">
                 {vignettes.slice(0).map((vignette) => (

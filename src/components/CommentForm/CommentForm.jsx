@@ -1,26 +1,75 @@
 import { useState } from 'react';
-import { createRoot } from 'react-dom/client';
 import "./CommentForm.css";
 
-function CommentForm() {
+function CommentForm( { vignetteID, setRefreshComments }) {
   const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
 
   function handleChange(e) {
     setName(e.target.value);
   }
+  function handleCommentChange(e) {
+    setComment(e.target.value);
+  }
+
+   const handleSubmit = async (event) => {
+  event.preventDefault();
+
+  try {
+    const response = await fetch("https://www.joanwiththecode.com/api/theroadlessboring/addComment.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        vignette_id: vignetteID,
+        username: name,
+        comment: comment
+      })
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.success) {
+      setName("");
+      setComment("");
+
+      setRefreshComments(prev => !prev);
+    } else {
+      console.error("Failed to add comment:", data.error);
+    }
+  } catch (err) {
+    console.error("Network error:", err);
+  }
+};
 
   return (
-    <form>
-      <label>Enter your name:
-        <input
-          type="text" 
-          value={name}
-          onChange={handleChange}
-        />
-      </label>
-      <p>Current value: {name}</p>
-    </form>
-  )
+  <form className="comment-form" onSubmit={handleSubmit}>
+    <div className="form-group">
+      <label htmlFor="name">Your Name</label>
+      <input
+        id="name"
+        type="text"
+        value={name}
+        onChange={handleChange}
+        placeholder="Enter your name"
+        required
+      />
+    </div>
+
+    <div className="form-group">
+      <label htmlFor="comment">Your Comment</label>
+      <textarea
+        id="comment"
+        value={comment}
+        onChange={handleCommentChange}
+        placeholder="Write your comment here..."
+        required
+        rows={4}
+      />
+    </div>
+
+    <button type="submit" className="submit-btn">Submit</button>
+  </form>
+);
 }
 
 export default CommentForm;
