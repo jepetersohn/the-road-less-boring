@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { vignettes } from "../../data";
 import VignetteMap from "../Map/VignetteMap";
+import CommentForm from "../CommentForm/CommentForm";
 import "./Vignette.css";
 
 export default function Vignette() {
@@ -60,6 +61,13 @@ export default function Vignette() {
 
         <p className="vignette-tags">{vignette.tags}</p>
       </div>
+      <hr style={{ 
+      width: "100%" }} />
+      <div id="comment-section">
+         <h2>Comments</h2>   
+         <CommentForm />
+      </div>
+
     </div>
   );
 }
