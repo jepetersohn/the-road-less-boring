@@ -1,55 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./LeaveYourMark.css";
 
 export default function LeaveYourMark() {
-  // State for the ritual
-  const [isOpen, setIsOpen] = useState(false);
-  const [hasSigned, setHasSigned] = useState(false);
+  const [marks, setMarks] = useState([]); 
+  const [preview, setPreview] = useState(null); 
 
-  // Current input state
-  const [initials, setInitials] = useState("");
+  const [initials, setInitials] = useState(""); 
   const [color, setColor] = useState("#000000");
   const [font, setFont] = useState("Arial");
   const [fontSize, setFontSize] = useState(24);
   const [isBold, setIsBold] = useState(false);
+  const [rotation, setRotation] = useState(0); 
 
-  // Wall marks
-  const [marks, setMarks] = useState([]);
+  const [dragging, setDragging] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
-  // Input handlers
-  const handleInitialsChange = (e) => setInitials(e.target.value);
+  useEffect(() => {
+    const submitted = sessionStorage.getItem("hasLeftMark") === "true";
+    setHasSubmitted(submitted);
+  }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setHasSigned(true);
-     /* try {
-            const response = await fetch("https://www.joanwiththecode.com/api/theroadlessboring/addComment.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                initials: initials
-            })
-        });
-
-        const data = await response.json();
-
-        if (response.ok && data.success) {
-            setInitials("");
-
-        } else {
-            console.error("Failed to add initials:", data.error);
-        }
-    } catch (err) {
-        console.error("Network error:", err);
-    }*/
-  };
-
-  // Wall click handler
   const handleWallClick = (e) => {
-    if (!hasSigned) return; // only allow placement after form submission
+    if (hasSubmitted) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    setPreview({ x, y });
+  };
+
+  const handleMouseDown = (e) => {
+    e.stopPropagation();
+    setDragging(true);
+  };
+  const handleMouseMove = (e) => {
+    if (!dragging || !preview) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    let x = ((e.clientX - rect.left) / rect.width) * 100;
+    let y = ((e.clientY - rect.top) / rect.height) * 100;
+    x = Math.min(Math.max(x, 0), 100);
+    y = Math.min(Math.max(y, 0), 100);
+    setPreview({ ...preview, x, y });
+  };
+  const handleMouseUp = () => setDragging(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!preview) return;
 
     const newMark = {
       initials,
@@ -57,58 +54,125 @@ export default function LeaveYourMark() {
       font,
       fontSize,
       isBold,
-      x,
-      y,
+      x: preview.x,
+      y: preview.y,
+      rotation,
     };
 
     setMarks([...marks, newMark]);
 
-    // Reset form state if you want the user to leave another mark
+    sessionStorage.setItem("hasLeftMark", "true");
+    setHasSubmitted(true);
+
+    setPreview(null);
     setInitials("");
     setColor("#000000");
     setFont("Arial");
     setFontSize(24);
     setIsBold(false);
-    setHasSigned(false);
-    setIsOpen(false);
+    setRotation(0);
   };
+
+  const tiltOptions = [-15, -10, -5, 0, 5, 10, 15];
 
   return (
     <>
-      {!isOpen && <button onClick={() => setIsOpen(true)}>Leave Your Mark</button>}
+      <div
+        className="graffiti-wall"
+        onClick={handleWallClick}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "400px",
+          background: "#eee",
+          border: "2px solid #ccc",
+          cursor: hasSubmitted ? "not-allowed" : "crosshair",
+        }}
+      >
 
-      {isOpen && !hasSigned && (
-        <>
-          {/* Live Preview */}
+        {!hasSubmitted && marks.length === 0 && !preview && (
           <div
             style={{
-              color,
-              fontFamily: font,
-              fontSize: `${fontSize}px`,
-              fontWeight: isBold ? "bold" : "normal",
-              marginBottom: "1em",
+              position: "absolute",
+              top: "10px",
+              width: "100%",
+              textAlign: "center",
+              color: "#555",
+              fontStyle: "italic",
+              pointerEvents: "none",
+              fontSize: "14px",
             }}
           >
-            {initials || "JD"}
+            Click anywhere in the box to leave your mark
           </div>
+        )}
 
-          {/* Form */}
-          <form className="comment-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="initials">Your Initials</label>
-              <textarea
-                id="initials"
-                value={initials}
-                onChange={handleInitialsChange}
-                required
-                maxLength="3"
-              />
+        {marks.map((mark, idx) => (
+          <div
+            key={idx}
+            style={{
+              position: "absolute",
+              left: `${mark.x}%`,
+              top: `${mark.y}%`,
+              color: mark.color,
+              fontFamily: mark.font,
+              fontSize: `${mark.fontSize}px`,
+              fontWeight: mark.isBold ? "bold" : "normal",
+              transform: `translate(-50%, -50%) rotate(${mark.rotation}deg)`,
+              pointerEvents: "none",
+            }}
+          >
+            {mark.initials}
+          </div>
+        ))}
+
+        {preview && !hasSubmitted && (
+          <>
+            <div
+              onMouseDown={handleMouseDown}
+              style={{
+                position: "absolute",
+                left: `${preview.x}%`,
+                top: `${preview.y}%`,
+                color,
+                fontFamily: font,
+                fontSize: `${fontSize}px`,
+                fontWeight: isBold ? "bold" : "normal",
+                transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
+                cursor: "move",
+                zIndex: 500,
+              }}
+            >
+              {initials || "XX"}
             </div>
 
-            {/* Color Picker */}
-            <div className="form-group">
-              <label>Color:</label>
-              <div style={{ display: "flex", gap: "0.5em", marginTop: "0.25em" }}>
+            <form
+              onClick={(e) => e.stopPropagation()}
+              onSubmit={handleSubmit}
+              style={{
+                position: "absolute",
+                top: `${preview.y + 5}%`,
+                left: `${preview.x}%`,
+                transform: "translate(-50%, 0)",
+                background: "rgba(255,255,255,0.9)",
+                padding: "8px",
+                borderRadius: "4px",
+                zIndex: 1000,
+              }}
+            >
+              <input
+                type="text"
+                value={initials}
+                onChange={(e) => setInitials(e.target.value.toUpperCase())}
+                placeholder="Your initials"
+                maxLength={3}
+                required
+              />
+
+
+              <div style={{ display: "flex", gap: "0.25em", marginTop: "0.25em" }}>
                 {["#000000", "#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF"].map(
                   (c) => (
                     <div
@@ -125,12 +189,8 @@ export default function LeaveYourMark() {
                   )
                 )}
               </div>
-            </div>
 
-            {/* Font Picker */}
-            <div className="form-group">
-              <label>Font:</label>
-              <div style={{ display: "flex", gap: "0.5em", marginTop: "0.25em" }}>
+              <div style={{ display: "flex", gap: "0.25em", marginTop: "0.25em" }}>
                 {["Arial", "Courier New", "Brush Script MT"].map((f) => (
                   <button
                     key={f}
@@ -146,12 +206,8 @@ export default function LeaveYourMark() {
                   </button>
                 ))}
               </div>
-            </div>
 
-            {/* Font Size Picker */}
-            <div className="form-group">
-              <label>Font Size:</label>
-              <div style={{ display: "flex", gap: "0.5em", marginTop: "0.25em" }}>
+              <div style={{ display: "flex", gap: "0.25em", marginTop: "0.25em" }}>
                 {[16, 24, 32, 48].map((size) => (
                   <button
                     key={size}
@@ -166,11 +222,8 @@ export default function LeaveYourMark() {
                   </button>
                 ))}
               </div>
-            </div>
 
-            {/* Bold Toggle */}
-            <div className="form-group">
-              <label>
+              <label style={{ display: "block", marginTop: "0.25em" }}>
                 <input
                   type="checkbox"
                   checked={isBold}
@@ -178,56 +231,47 @@ export default function LeaveYourMark() {
                 />{" "}
                 Bold
               </label>
-            </div>
 
-            <button type="submit" className="submit-btn">
-              Submit
-            </button>
-          </form>
-        </>
-      )}
+              <div style={{ display: "flex", gap: "0.25em", marginTop: "0.25em" }}>
+                {tiltOptions.map((angle) => (
+                  <button
+                    key={angle}
+                    type="button"
+                    onClick={() => setRotation(angle)}
+                    style={{
+                      fontWeight: rotation === angle ? "bold" : "normal",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {angle}°
+                  </button>
+                ))}
+              </div>
 
-      {/* Graffiti Wall */}
-      <div
-        className="graffiti-wall"
-        onClick={handleWallClick}
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "400px",
-          background: "#eee",
-          marginTop: "1em",
-          border: "2px solid #ccc",
-          cursor: hasSigned ? "crosshair" : "default",
-        }}
-      >
-        {marks.map((mark, idx) => (
+              <button type="submit" style={{ marginTop: "0.25em" }}>
+                Submit
+              </button>
+            </form>
+          </>
+        )}
+
+        {hasSubmitted && (
           <div
-            key={idx}
             style={{
               position: "absolute",
-              left: `${mark.x}%`,
-              top: `${mark.y}%`,
-              color: mark.color,
-              fontFamily: mark.font,
-              fontSize: `${mark.fontSize}px`,
-              fontWeight: mark.isBold ? "bold" : "normal",
-              transform: "translate(-50%, -50%)",
+              top: "50%",
+              width: "100%",
+              textAlign: "center",
+              color: "#999",
+              fontStyle: "italic",
+              transform: "translateY(-50%)",
               pointerEvents: "none",
             }}
           >
-            {mark.initials}
+            You have already left your mark this session.
           </div>
-        ))}
+        )}
       </div>
-
-      {isOpen && hasSigned && (
-        <div className="signed" style={{ marginTop: "1em" }}>
-          Click on the wall to place your mark!
-        </div>
-      )}
     </>
   );
 }
-
-
