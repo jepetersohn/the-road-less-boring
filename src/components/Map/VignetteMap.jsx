@@ -13,11 +13,7 @@ export default function VignetteMap({ vignette }) {
   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   opacity={0.4}
 />
-  <Marker position={[vignette.lat, vignette.lng]}>
-    <Popup>
-      A pretty CSS3 popup. <br /> Easily customizable.
-    </Popup>
-  </Marker>
+  <Marker position={[vignette.lat, vignette.lng]} />
 </MapContainer>
     </>
   );

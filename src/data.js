@@ -18,7 +18,12 @@ export const vignettes = [
         tags: "",
         type: "origin",
         revealed: false,
-        supplementalImages: ["/projects/theroadlessboring/images/WaylandTheater2.jpg"]
+        supplementalImages: [
+            {
+                src: "/projects/theroadlessboring/images/WaylandTheater2.jpg",
+                alt: "Close-up of a wall of graffiti"
+            }
+        ]
     },
      {
         id:  "DoverHouse",
@@ -43,7 +48,7 @@ export const vignettes = [
         type: "historical",
         tags: "",
         revealed: false,
-        supplementalImages: [""]
+        supplementalImages: []
     },
         {
         id:  "LachoEarthOven",
@@ -63,7 +68,7 @@ export const vignettes = [
         tags: "",
         type: "historical",
         revealed: false,
-        supplementalImages: [""]
+        supplementalImages: []
     },
     {
         id:  "ElvisPlayground",
@@ -84,7 +89,7 @@ export const vignettes = [
         tags: "",
         type: "historical",
         revealed: false,
-        supplementalImages: [""]
+        supplementalImages: []
     },
        {
         id:  "HooverDam",
@@ -104,7 +109,35 @@ export const vignettes = [
         tags: "",
         type: "historical",
         revealed: false,
-        supplementalImages: [""]
+        supplementalImages: []
+    },
+       {
+        id:  "Olympiastadion",
+        imageUrl: "/projects/theroadlessboring/images/Olympiastadion.png",
+        alt: "Entrance to a stadium with the olympic rings displayed",
+        url: "Olympiastadion",
+        title: "When the World Came to Berlin",
+        caption: "",
+        description: ["I took this photo at the entrance to the Olympiastadion. It's the same monumental gate where athletes, spectators, and history-makers poured in during the 1936 Berlin Olympics. On August 1st of that year, more than 100,000 people packed this massive stone arena for the opening ceremony, where Adolf Hitler proclaimed the Games open in front of a sea of flags and rigid salutes.",
+        "Just a few days later, a young American sprinter named Jesse Owens stepped through these gates and onto the track here, and proceeded to shatter the ideology of hatred that built it. Owens won four gold medals in front of this crowd, his victories becoming one of the most defiant moments of those Games.",
+        "This place was designed for grand displays meant to cement the propanda of an evil regime. But it was Owens' performance that generations remembered: the power of an individual redefining the meaning of the stage itself.",
+        "During my visit, the cold stone did not invite celebration; it felt more like a tomb. It is now a silent memorial where the echoes of what once happened here outlast the cheers that once filled it. Standing here with my camera, I was struck by that tension: a place built for spectacle that now only invites reflection."],
+        town: "Berlin",
+        state: "",
+        country: "Germany",
+        lat: "52.5147",
+        lng:"13.2395",
+        tags: "",
+        type: "historical",
+        revealed: false,
+        supplementalImages: [{
+                src: "/projects/theroadlessboring/images/Berlin1936.jpg",
+                alt: "Black and white photo of cars at the entrance to the Olympic Games of 1936"
+            },
+            {
+                src: "/projects/theroadlessboring/images/Berlin1936_2.jpg",
+                alt: "Black and white photo of people standing at the entrance to the Olympic Games of 1936"
+            }]
     },
   
      {
@@ -125,7 +158,28 @@ export const vignettes = [
         tags: "",
         type: "historical",
         revealed: false,
-        supplementalImages: ["/projects/theroadlessboring/images/Lighthouse.jpg", "/projects/theroadlessboring/images/Lighthouse2.jpg", "/projects/theroadlessboring/images/Lighthouse3.jpg", "/projects/theroadlessboring/images/Lighthouse4.jpg", "/projects/theroadlessboring/images/LighthouseGhostTales.jpg"]
+        supplementalImages: [
+            {
+                src: "/projects/theroadlessboring/images/Lighthouse.jpg",
+                alt: "Antique black and white photo of the lighthouse exterior"
+            },
+            {
+                src: "/projects/theroadlessboring/images/Lighthouse2.jpg",
+                alt: "Present-day photo of the lighthouse exterior"
+            },
+            {
+                src: "/projects/theroadlessboring/images/Lighthouse4.jpg",
+                alt: "Interior photo of the lighthouse dining room"
+            },
+            {
+                src: "/projects/theroadlessboring/images/LighthouseGhostTales.jpg",
+                alt: "A book entitled \"Ghost Tales\""
+            },
+            {
+                src: "/projects/theroadlessboring/images/Lighthouse3.jpg",
+                alt: "Interior photo of the lighthouse upstairs"
+            },
+        ]
     },
      {
         id:  "JudyGarlandBirthplace",
@@ -148,7 +202,7 @@ export const vignettes = [
         tags: "",
         type: "historical",
         revealed: false,
-        supplementalImages: [""]
+        supplementalImages: []
     },
     {
         id:  "RaptorRanch",
@@ -171,7 +225,20 @@ export const vignettes = [
         tags: "",
         type: "historical",
         revealed: false,
-        supplementalImages: ["/projects/theroadlessboring/images/RaptorRanch2.jpg", "/projects/theroadlessboring/images/RaptorRanch3.jpg", "/projects/theroadlessboring/images/RaptorRanch4.jpg"]
+        supplementalImages: [
+            {
+                src: "/projects/theroadlessboring/images/RaptorRanch2.jpg",
+                alt: "Interior of a Bedrock City house, with chair, table, and fireplace"
+            },
+            {
+                src: "/projects/theroadlessboring/images/RaptorRanch3.jpg",
+                alt: "Brontosaurus slide and playground"
+            },
+            {
+                src: "/projects/theroadlessboring/images/RaptorRanch4.jpg",
+                alt: "Stone motocycles outside of Bedrock City Jail"
+            },
+        ]
     },
  
     {
@@ -194,7 +261,18 @@ export const vignettes = [
         lng:"-90.023",
         type: "historical",
         revealed: false,
-        supplementalImages: [""]
+         supplementalImages: [{
+                src: "/projects/theroadlessboring/images/graceland-kitchen-1970s.jpg",
+                alt: "Two people in the kitchen in 1970s"
+            },
+            {
+                src: "/projects/theroadlessboring/images/graceland-kitchen-1970s2.jpg",
+                alt: "Woman standing over stove with rolling pin in 1970s"
+            },
+           {
+                src: "/projects/theroadlessboring/images/graceland-kitchen-mary.png",
+                alt: "Graceland cook Mary Jenkins standing over stove in 1970s"
+            }]
     },
      {
         id:  "ArtAlley",
@@ -215,7 +293,7 @@ export const vignettes = [
         type: "quirky",
         tags: "",
         revealed: false,
-        supplementalImages: [""]
+        supplementalImages: []
     },
      {
         id:  "LucyHouse",
@@ -235,7 +313,7 @@ export const vignettes = [
         type: "historical",
         tags: "",
         revealed: false,
-        supplementalImages: [""]
+        supplementalImages: []
     },
      {
         id:  "BirdcageStairs",
@@ -255,7 +333,7 @@ export const vignettes = [
         type: "historical",
         tags: "",
         revealed: false,
-        supplementalImages: [""]
+        supplementalImages: []
     },
     {
         id:  "Wupatki",
@@ -275,7 +353,7 @@ export const vignettes = [
         type: "historical",
         tags: "",
         revealed: false,
-        supplementalImages: [""]
+        supplementalImages: []
     }
 
 ]

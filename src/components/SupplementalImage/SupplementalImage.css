@@ -1,0 +1,28 @@
+.vignette-images {
+  display: flex;
+}
+
+.supImg.active {
+  outline: 2px solid #000;
+}
+
+.supImg {
+  flex: 1 1 auto;
+  margin: 3px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.supImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

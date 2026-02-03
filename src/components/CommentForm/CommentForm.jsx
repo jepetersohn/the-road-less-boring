@@ -56,12 +56,12 @@ function CommentForm( { vignetteID, setRefreshComments }) {
     </div>
 
     <div className="form-group">
-      <label htmlFor="comment">Your Comment</label>
+      <label htmlFor="comment">Your Memory</label>
       <textarea
         id="comment"
         value={comment}
         onChange={handleCommentChange}
-        placeholder="Write your comment here..."
+        placeholder="Write your memory here..."
         required
         rows={4}
       />

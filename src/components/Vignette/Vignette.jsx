@@ -5,12 +5,18 @@ import BackLink from "../BackLink/BackLink";
 import VignetteMap from "../Map/VignetteMap";
 import CommentForm from "../CommentForm/CommentForm";
 import CommentList from "../CommentList/CommentList";
+import SupplementalImage from "../SupplementalImage/SupplementalImage";
 import "./Vignette.css";
 
 export default function Vignette() {
   const { vignetteId } = useParams();
   const vignette = vignettes.find(v => v.id === vignetteId);
+
+  if (!vignette) {
+    return <p>Vignette not found</p>;
+  }
   const [refreshComments, setRefreshComments] = useState(false);
+  const [activeImage, setActiveImage] = useState(vignette.imageUrl);
 
   const [isHovering, setIsHovering] = useState(false);
   const [bgPos, setBgPos] = useState({ x: 50, y: 50 });
@@ -38,7 +44,7 @@ export default function Vignette() {
         onMouseMove={!isMobile ? handleMouseMove : undefined}
       >
         <img
-          src={vignette.imageUrl}
+          src={activeImage}
           alt={vignette.title}
           className={`vignette-img ${isHovering ? "is-hidden" : ""}`}
         />
@@ -46,17 +52,43 @@ export default function Vignette() {
         <div
           className={`zoom-replace ${isHovering ? "is-visible" : ""}`}
           style={{
-            backgroundImage: `url(${vignette.imageUrl})`,
+            backgroundImage: `url(${activeImage})`,
             backgroundPosition: `${bgPos.x}% ${bgPos.y}%`
           }}
         />
       </div>
-      
+      {vignette.supplementalImages.length > 0 && (
+  <div
+    className="vignette-images"
+    role="group"
+    aria-label="Alternate images"
+  >
+    <SupplementalImage
+      key="original"
+      image={vignette.imageUrl}
+      alt={`Original view of ${vignette.title}`}
+      isActive={activeImage === vignette.imageUrl}
+      onClick={() => setActiveImage(vignette.imageUrl)}
+    />
+
+    {vignette.supplementalImages.map((img) => (
+      <SupplementalImage
+        key={img.src}
+        image={img.src}
+        alt={img.alt}
+        isActive={img.src === activeImage}
+        onClick={() => setActiveImage(img.src)}
+      />
+    ))}
+  </div>
+)}
+
+
       <div className="vignette-text">
         {vignette.description.map((text, i) => (
           <p key={i}>{text}</p>
         ))}
-<VignetteMap vignette={ vignette } />
+      <VignetteMap vignette={ vignette } />
         <p className="vignette-meta">
           <i>{[vignette.town, vignette.state, vignette.country]
     .filter(Boolean)
@@ -68,7 +100,7 @@ export default function Vignette() {
       <hr style={{ 
       width: "100%" }} />
       <div id="comment-section">
-         <h2>Comments</h2>   
+         <h2>Memories</h2>   
          <CommentForm vignetteID={vignette.id} setRefreshComments={setRefreshComments}  />
          <CommentList vignetteID={vignette.id} refreshComments={refreshComments}  />
       </div>

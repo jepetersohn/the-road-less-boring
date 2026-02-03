@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./OriginVignette.css";
 import { useNavigate } from "react-router-dom";
-import VignetteMap from "../Map/VignetteMap";
+import LeaveYourMark from "../LeaveYourMark/LeaveYourMark";
 
-export default function OriginVignette({ vignette }) {
+export default function OriginVignette({ vignettes }) {
   const navigate = useNavigate();
+  const vignette = vignettes[0];
   const [isHovering, setIsHovering] = useState(false);
   const [imgOffset, setImgOffset] = useState({ x: 0, y: 0 });
 
@@ -22,14 +23,8 @@ export default function OriginVignette({ vignette }) {
         <h2>A Photographic Journey Through Places and the Lives That Touched Them</h2>
       </div>
       <hr />
-   <div className="wip-text">
-        This is a work in progress: keep checking back. Still to be added:
-        <ul>
-          <li>Interactive graffiti wall</li>
-          <li><s>Full vignettes with descriptions and React-Leaflet</s></li>
-          <li><s>Comment submission in each image's vignette</s></li>
-        </ul>
-      </div>
+
+      
 <div
   className="image-border-container"
   onMouseEnter={() => setIsHovering(true)}
@@ -55,13 +50,15 @@ export default function OriginVignette({ vignette }) {
   <div className="vignette-caption-on-border">Click to start the journey</div>
 </div>
 
-
       <div className="origin-description">
         {vignette.description.map((desc, idx) => (
           <p key={`${vignette.id}-${idx}`}>{desc}</p>
         ))}
       </div>
-      <VignetteMap vignette={ vignette } />
+
+      <div className="LeaveYourMark"> 
+        <LeaveYourMark />
+      </div>
     </>
   );
 }

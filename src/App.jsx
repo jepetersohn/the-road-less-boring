@@ -16,7 +16,7 @@ function App() {
     <>
     <BrowserRouter basename="/projects/theroadlessboring">
         <Routes>
-          <Route path="/" element={ <OriginVignette vignette={vignettes[0]} /> }/>
+          <Route path="/" element={ <OriginVignette vignettes={vignettes} /> }/>
           <Route path="/Gallery" element={ <Gallery /> }/>
           <Route path="/:vignetteId" element={ <Vignette /> }/>
         </Routes>
