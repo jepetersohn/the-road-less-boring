@@ -1,0 +1,45 @@
+
+.graffiti-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.graffiti-form .form-group label {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.graffiti-form .form-group input,
+.graffiti-form .form-group textarea,
+.graffiti-form .form-group select {
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.graffiti-form .form-group input:focus,
+.graffiti-form .form-group textarea:focus
+.graffiti-form .form-group select:focus {
+  outline: none;
+  border-color: #0077ff;
+  box-shadow: 0 0 5px rgba(0, 119, 255, 0.2);
+}
+
+.graffiti-form .submit-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.graffiti-form .submit-btn:hover {
+  background-color: #005fcc;
+}
